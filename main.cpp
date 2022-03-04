@@ -4,6 +4,9 @@
 #include "include/Caesar/encode.hpp"
 #include "include/Caesar/decode.hpp"
 
+#include "include/Swap/encode.hpp"
+#include "include/Swap/decode.hpp"
+
 int main ()
 {
     std::vector<std::string> vec1;
@@ -16,8 +19,13 @@ int main ()
 
     vec1.push_back(decodeString<ENCODING_TYPE::CAESAR> ("Xfqzyfyntsx", -21));
 
-    vec1.push_back(encodeString<ENCODING_TYPE::CAESAR> ("Salutations", -8));
-    vec1.push_back(decodeString<ENCODING_TYPE::CAESAR> ("Ksdmlslagfk", -8));
+    vec1.push_back(encodeString<ENCODING_TYPE::SWAP> ("Salutations", 2));
+    vec1.push_back(encodeString<ENCODING_TYPE::SWAP> ("Salutations", 3));
+
+    vec1.push_back(decodeString<ENCODING_TYPE::SWAP> ("aSulatitnos", 2));
+    vec1.push_back(decodeString<ENCODING_TYPE::SWAP> ("laSatuoitsn", 3));
+
+    // vec1.push_back(decodeString<ENCODING_TYPE::SWAP> ("Ksdmlslagfk", 1));
 
     print_vector(vec1);
     return 0;

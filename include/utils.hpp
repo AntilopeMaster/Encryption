@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 template<typename T>
 void print_vector( const T &vec)
@@ -18,7 +19,8 @@ enum CHARACTER_TYPE {
 };
 
 enum ENCODING_TYPE {
-    CAESAR
+    CAESAR,
+    SWAP
  //   ,BINARY
 };
 
@@ -35,4 +37,16 @@ char convertCharForDecode(const char &c, const int &shift);
 
 int modulo(int x,int N){
     return (x % N + N) %N;
+}
+
+std::string join(const std::vector<std::string>& vec)
+{
+    std::string ret;
+
+    for ( const std::string &a: vec)
+    {
+        ret += a;
+    }
+
+    return ret;
 }
