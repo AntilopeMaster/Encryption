@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 
-#include "encode.hpp"
-#include "decode.hpp"
+#include "include/Caesar/encode.hpp"
+#include "include/Caesar/decode.hpp"
 
 int main ()
 {

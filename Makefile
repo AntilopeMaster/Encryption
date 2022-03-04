@@ -7,9 +7,11 @@ EXEC= encrypt
 
 SRC=main.cpp
 
-HEADERS=utils.hpp \
-		decode.hpp \
-		encode.hpp
+HEADERS_PATH=include
+
+HEADERS=$(HEADERS_PATH)/utils.hpp \
+		$(HEADERS_PATH)/Caesar/decode.hpp \
+		$(HEADERS_PATH)/Caesar/encode.hpp
 
 OBJ= $(SRC:.cpp=.o)
 
