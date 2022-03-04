@@ -20,7 +20,8 @@ enum CHARACTER_TYPE {
 
 enum ENCODING_TYPE {
     CAESAR,
-    SWAP
+    SWAP,
+    VIGENERE
  //   ,BINARY
 };
 
@@ -49,4 +50,18 @@ std::string join(const std::vector<std::string>& vec)
     }
 
     return ret;
+}
+
+std::vector<std::string> blockOfNChar(const std::string &message, int substr_size)
+{
+    std::string msg_copy = message;
+
+    std::vector<std::string> vec;
+
+    while (msg_copy.size() != 0 )
+    {
+        vec.push_back(msg_copy.substr(0, substr_size));
+        msg_copy.erase(0, substr_size);
+    }
+    return vec;
 }

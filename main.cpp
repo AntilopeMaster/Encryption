@@ -7,6 +7,9 @@
 #include "include/Swap/encode.hpp"
 #include "include/Swap/decode.hpp"
 
+#include "include/Vigenere/encode.hpp"
+#include "include/Vigenere/decode.hpp"
+
 int main ()
 {
     std::vector<std::string> vec1;
@@ -24,6 +27,10 @@ int main ()
 
     vec1.push_back(decodeString<ENCODING_TYPE::SWAP> ("aSulatitnos", 2));
     vec1.push_back(decodeString<ENCODING_TYPE::SWAP> ("laSatuoitsn", 3));
+
+    vec1.push_back(encodeString<ENCODING_TYPE::VIGENERE>( "CETT", {3,1,5,2}));
+
+    vec1.push_back(decodeString<ENCODING_TYPE::VIGENERE>( "FFYV", {3,1,5,2}));
 
     // vec1.push_back(decodeString<ENCODING_TYPE::SWAP> ("Ksdmlslagfk", 1));
 

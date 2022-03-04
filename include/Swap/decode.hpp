@@ -14,16 +14,11 @@ std::string decodeString<ENCODING_TYPE::SWAP>(const std::string &message, const 
         return message;
     }
 
-    std::string msg_copy = message;
+    std::vector<std::string> vec = blockOfNChar( message, substr_size);
 
-    std::vector<std::string> vec;
-
-    while (msg_copy.size() != 0 )
+    for (std::string &part : vec)
     {
-        std::string part = msg_copy.substr(0, substr_size);
         std::reverse(part.begin(), part.end());
-        vec.push_back(part);
-        msg_copy.erase(0, substr_size);
     }
 
     return join(vec);
