@@ -3,14 +3,6 @@
 
 #include "../utils.hpp"
 
-#include <bitset>
-
-std::string encodeCharToBinary(const char c)
-{
-    std::bitset<8> bit(c);
-    return bit.to_string();
-}
-
 template<ENCODING_TYPE>
 std::string encodeString(const std::string &message);
 
@@ -20,7 +12,7 @@ std::string encodeString<ENCODING_TYPE::BINARY>(const std::string &message)
     std::string ret;
     for (const char c : message)
     {
-        ret += encodeCharToBinary(c);
+        ret += encodeCharToBinary(c).to_string();
     }
     return ret;
 }

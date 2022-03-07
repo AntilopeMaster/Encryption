@@ -13,6 +13,10 @@
 #include "include/Binary/encode.hpp"
 #include "include/Binary/decode.hpp"
 
+#include "include/Xor/encode.hpp"
+#include "include/Xor/decode.hpp"
+
+
 int main ()
 {
     std::vector<std::string> vec1;
@@ -39,11 +43,15 @@ int main ()
 
     vec1.push_back(decodeString<ENCODING_TYPE::BINARY> ("01010111010001010101001101001000"));
 
-    std::string test = encodeString<ENCODING_TYPE::BINARY> ("oulah le message \nsuper compliqué");
+    vec1.push_back(encodeString<ENCODING_TYPE::XOR> ("WESH"));
 
-    vec1.push_back(test);
+    vec1.push_back(decodeString<ENCODING_TYPE::XOR> ("10101000101110101010110010110111"));
 
-    vec1.push_back(decodeString<ENCODING_TYPE::BINARY>(test));
+    // std::string test = encodeString<ENCODING_TYPE::BINARY> ("oulah le message \nsuper compliqué");
+
+    // vec1.push_back(test);
+
+    // vec1.push_back(decodeString<ENCODING_TYPE::BINARY>(test));
 
     print_vector(vec1);
     return 0;

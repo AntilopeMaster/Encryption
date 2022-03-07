@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <bitset>
 
 template<typename T>
 void print_vector( const T &vec)
@@ -22,7 +23,8 @@ enum ENCODING_TYPE {
     CAESAR,
     SWAP,
     VIGENERE,
-    BINARY
+    BINARY,
+    XOR
 };
 
 enum ENCODING_MODE {
@@ -64,4 +66,10 @@ std::vector<std::string> blockOfNChar(const std::string &message, int substr_siz
         msg_copy.erase(0, substr_size);
     }
     return vec;
+}
+
+std::bitset<8> encodeCharToBinary(const char c)
+{
+    std::bitset<8> bit(c);
+    return bit;
 }
