@@ -10,6 +10,9 @@
 #include "include/Vigenere/encode.hpp"
 #include "include/Vigenere/decode.hpp"
 
+#include "include/Binary/encode.hpp"
+#include "include/Binary/decode.hpp"
+
 int main ()
 {
     std::vector<std::string> vec1;
@@ -32,7 +35,15 @@ int main ()
 
     vec1.push_back(decodeString<ENCODING_TYPE::VIGENERE>( "FFYV", {3,1,5,2}));
 
-    // vec1.push_back(decodeString<ENCODING_TYPE::SWAP> ("Ksdmlslagfk", 1));
+    vec1.push_back(encodeString<ENCODING_TYPE::BINARY> ("WESH"));
+
+    vec1.push_back(decodeString<ENCODING_TYPE::BINARY> ("01010111010001010101001101001000"));
+
+    std::string test = encodeString<ENCODING_TYPE::BINARY> ("oulah le message \nsuper compliqué");
+
+    vec1.push_back(test);
+
+    vec1.push_back(decodeString<ENCODING_TYPE::BINARY>(test));
 
     print_vector(vec1);
     return 0;

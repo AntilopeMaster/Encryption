@@ -21,8 +21,8 @@ enum CHARACTER_TYPE {
 enum ENCODING_TYPE {
     CAESAR,
     SWAP,
-    VIGENERE
- //   ,BINARY
+    VIGENERE,
+    BINARY
 };
 
 enum ENCODING_MODE {
